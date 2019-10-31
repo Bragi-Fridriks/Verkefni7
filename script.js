@@ -44,12 +44,12 @@ function play() {
  const random = randomNumber(1,100);
  let guess = parseGuess(prompt("Giskaðu á tölu sem er á milli 0 og 100"));
  var nr = 1;
- while (guess != random) {
+ while (guess != random && guess) {
      getResponse(guess, random);
      nr++;
-     guess = parseGuess(prompt("Giskaðu á tölu sem er á milli 0 og 100"));     
+     guess = parseGuess(prompt("Giskaðu á tölu sem er á milli 0 og 100"));
  }
- getResponse(guess, random);
+ getResponse(guess, random); 
  if(guess) games.push(nr);
  if(confirm("Viltu spila annan leik")) play();
  else getResults();
